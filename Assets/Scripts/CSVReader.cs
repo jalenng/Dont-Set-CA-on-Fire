@@ -11,7 +11,7 @@ public class CSVReader
         var lines = fileData.Split('\n');
         
         List<List<string>> all = new List<List<string>>();
-        for (int i = 1; i < lines.Length; i++) {
+        for (int i = 0; i < lines.Length; i++) {
             var line = lines[i];
             if (line == "") break;
             List<string> texts = new List<string>();

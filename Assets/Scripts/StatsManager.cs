@@ -50,7 +50,7 @@ public class StatsManager : MonoBehaviour
     void ShowQuestion()
     {
         // Question tmp = QM.questions[qnum-1];
-        questionNumber.text = "Question "+qnum.ToString();
+        // questionNumber.text = "Question "+qnum.ToString();
         // questionText.text = tmp.questionText;
         // userChoice.text = tmp.userAnswer;
         var statistics = GetStats(qnum);

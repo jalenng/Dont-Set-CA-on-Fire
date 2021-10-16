@@ -7,7 +7,6 @@ public class QuestionManager : MonoBehaviour
 {
     private List<Question> allQ;
     public List<Question> questions;
-    public List<string> answers;
     private void Awake()
     {
         int gameStatusCount = FindObjectsOfType<QuestionManager>().Length;
@@ -25,6 +24,7 @@ public class QuestionManager : MonoBehaviour
         questions = new List<Question>();
         ChooseQuestions(10);
     }
+
     void LoadQuestions()
     {
         var path = Application.dataPath + "/Resources/Data";
@@ -38,10 +38,10 @@ public class QuestionManager : MonoBehaviour
                 int j = 0;
                 Q.questionNumber = int.Parse(tmp[j++]);
                 Q.questionText = tmp[j++];
-                Q.A = tmp[j++];
-                Q.B = tmp[j++];
-                Q.C = tmp[j++];
-                Q.D = tmp[j++];
+                Q.options = new string[4];
+                for (int k = 0; k < 4; k++) {
+                    Q.options[k] = tmp[j++];
+                }
                 Q.answer = tmp[j++];
                 allQ.Add(Q);
             }
