@@ -41,7 +41,7 @@ public class QuestionRunner : MonoBehaviour
         Question Q = QM.questions[currentNum-1];
         questionNo.text = "Question "+currentNum.ToString();
         question.text = Q.questionText;
-        for (int i = 0; i < Q.options.Length; i++) {
+        for (int i = 0; i < 4; i++) {
             options[i].text = Q.options[i];
         }
     }
