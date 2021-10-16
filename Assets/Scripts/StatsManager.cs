@@ -19,7 +19,7 @@ public class StatsManager : MonoBehaviour
 
     void Awake()
     {
-        // QM = GameObject.FindObjectsOfType<QuestionManager>()[0].GetComponent<QuestionManager>();
+        QM = GameObject.FindObjectOfType<QuestionManager>().GetComponent<QuestionManager>();
     }
 
     void Start()
@@ -35,7 +35,7 @@ public class StatsManager : MonoBehaviour
     {
         qnum += 1;
         prevQuestion.interactable = true;
-        // if (QM.questions.Count <= qnum) { nextQuestion.interactable = false; }
+        if (QM.questions.Count <= qnum) { nextQuestion.interactable = false; }
         ShowQuestion();
     }
 
@@ -49,10 +49,10 @@ public class StatsManager : MonoBehaviour
 
     void ShowQuestion()
     {
-        // Question tmp = QM.questions[qnum-1];
+        Question tmp = QM.questions[qnum-1];
         questionNumber.text = "Question "+qnum.ToString();
-        // questionText.text = tmp.questionText;
-        // userChoice.text = tmp.userAnswer;
+        questionText.text = tmp.questionText;
+        userChoice.text = tmp.userAnswer;
         var statistics = GetStats(qnum);
         int sum = 0;
         foreach (var stat in statistics) sum += stat;
