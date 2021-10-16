@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/WildFire.unity
+    guid: 3410413796a57f446896106024e01304
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: 5a713b71e8d30b44da4854886c1f3909
+  - enabled: 1
+    path: Assets/Scenes/ResultStats.unity
+    guid: bb38aeaf447442945bbc731dd48df98a
   m_configObjects: {}
