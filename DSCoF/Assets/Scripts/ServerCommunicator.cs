@@ -21,6 +21,18 @@ public class ServerCommunicator : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    // Used for testing 
+    private void Start()
+    {
+        Debug.Log("Testing Get...");
+        int[] ids = {1, 2, 3, 4, 5};
+        StartCoroutine(GetResponse(ids));
+
+        
+        Debug.Log("Testing Post...");
+        StartCoroutine(PostResponse(1, 'A'));
+    }
  
     IEnumerator PostResponse(int id, char choice) {
         // Create post data
