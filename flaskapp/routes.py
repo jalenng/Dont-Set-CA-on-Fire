@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 @main.route('/results', methods = ['GET', 'POST'])
 def search_item():
     if request.method == 'POST':
-        data = request.get_json()
+        data = request.args
         choice = data['choice']
         id = data['id']
         result = con.updateResults(choice, id)
