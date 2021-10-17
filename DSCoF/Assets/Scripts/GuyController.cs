@@ -33,20 +33,20 @@ public class GuyController : MonoBehaviour
 
     void Update()
     {
-        // if (guy.GetCurrentAnimatorStateInfo(0).fullPathHash != idle) return;
-        if (!intro) {
-            QR.Disable();
-            Intro();
-            return;
-        } else if (state == 1) {
-            QR.Disable();
-            Correct();
-        } else if (state == 2) {
-            QR.Disable();
-            Wrong();
-        } else {
-            return;
-        }
+        QR.UpdateQuestion();
+        // if (!intro) {
+        //     QR.Disable();
+        //     Intro();
+        //     return;
+        // } else if (state == 1) {
+        //     QR.Disable();
+        //     Correct();
+        // } else if (state == 2) {
+        //     QR.Disable();
+        //     Wrong();
+        // } else {
+        //     return;
+        // }
     }
 
     void Intro()
@@ -114,8 +114,8 @@ public class GuyController : MonoBehaviour
             } else if (timer < 9) {
                 popup.text = "";
                 popupFrame.enabled = false;
-                WaitExit();
                 if (!fire) {
+                    WaitExit();
                     FC.CreateFire();
                     fire = true;
                 }

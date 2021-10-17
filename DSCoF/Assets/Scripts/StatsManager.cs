@@ -18,10 +18,11 @@ public class StatsManager : MonoBehaviour
 
     private int qnum;
     private QuestionManager QM;
-
-
+    private ServerCommunicator SC;
+    private float oriSize = 10;
     void Start()
     {
+        SC = GameObject.FindObjectsOfType<ServerCommunicator>()[0].GetComponent<ServerCommunicator>();
         QM = GameObject.FindObjectOfType<QuestionManager>().GetComponent<QuestionManager>();
         nextQuestion.onClick.AddListener(ToNextQ);
         prevQuestion.onClick.AddListener(ToPrevQ);
@@ -51,7 +52,6 @@ public class StatsManager : MonoBehaviour
         Question tmp = QM.questions[qnum-1];
         questionNumber.text = "Question "+qnum.ToString();
         questionText.text = tmp.questionText;
-        // userChoice.text = tmp.userAnswer;
         for (var i = 0; i < options.Length; i++) {
             options[i].text = tmp.options[i];
         }
@@ -60,15 +60,18 @@ public class StatsManager : MonoBehaviour
         foreach (var stat in statistics) sum += stat;
         for (var i = 0; i < statistics.Count; i++)
         {
-            float percentage = (float)statistics[i] / sum;
+            float percentage = (float)statistics[i] / Mathf.Max(sum, 1);
+            Debug.Log(percentage);
             percent[i].text = (percentage*100).ToString("0.0")+" %";
-            var width = percentage * maxWidth + 1;
+            var width = percentage * maxWidth + 2;
             var img = bars[i].GetComponent<Image>();
             img.color = Color.red;
             var rt = bars[i].GetComponent<RectTransform>();
-            rt.transform.Translate(-(rt.sizeDelta.x / 2.0f - 5),0,0);
+            // Debug.Log("Before"+(-(rt.sizeDelta.x / 2.0f)));
+            // rt.transform.Translate(-(rt.sizeDelta.x / 2.0f),0,0);
             rt.sizeDelta = new Vector2(width, rt.sizeDelta.y);
-            rt.transform.Translate(width / 2.0f - 5,0,0);
+            // Debug.Log("After"+ (width / 2.0f));
+            // rt.transform.Translate(width / 2.0f,0,0);
             arrows[i].gameObject.SetActive(false);
             if (char.ConvertToUtf32(tmp.answer, 0) - char.ConvertToUtf32("A", 0) == i) {
                 img.color = Color.green;
@@ -81,8 +84,7 @@ public class StatsManager : MonoBehaviour
 
     List<int> GetStats(int QN)
     {
-        // TODO
-        return new List<int>{0,0,0,1};
-        // return new List<int>{Random.Range(0,10),Random.Range(0,10),Random.Range(0,10),Random.Range(0,10)};
+        var st = SC.Get(new int[]{QN});
+        return new List<int>(st);
     }
 }

@@ -19,6 +19,6 @@ public class ResultManager : MonoBehaviour
                 score += 1;
             }
         }
-        scoreText.text = "You Got "+score.ToString()+" Points!";
+        scoreText.text = "You Saved "+(score*10).ToString()+" % of California!";
     }
 }

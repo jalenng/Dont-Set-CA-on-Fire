@@ -8,8 +8,10 @@ public class BackHome : MonoBehaviour
 {
     public Button homeButton;
     private QuestionManager QM;
+    private ServerCommunicator SC;
     void Start()
     {
+        SC = GameObject.FindObjectsOfType<ServerCommunicator>()[0].GetComponent<ServerCommunicator>();
         QM = GameObject.FindObjectsOfType<QuestionManager>()[0].GetComponent<QuestionManager>();
         homeButton.onClick.AddListener(ReturnHome);
     }
@@ -22,6 +24,8 @@ public class BackHome : MonoBehaviour
 
     void SendData()
     {
-        // TODO
+        for (int i = 0; i < QM.questions.Count; i++) {
+            SC.Post(QM.questions[i].QID, QM.questions[i].userAnswer[0]);
+        }
     }
 }

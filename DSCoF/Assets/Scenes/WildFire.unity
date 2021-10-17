@@ -1879,7 +1879,7 @@ RectTransform:
   - {fileID: 1028846406}
   - {fileID: 1611372783}
   m_Father: {fileID: 1507194612}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2220,7 +2220,7 @@ RectTransform:
   - {fileID: 1108872394}
   - {fileID: 421694390}
   m_Father: {fileID: 1507194612}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2681,7 +2681,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507194612}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2756,7 +2756,7 @@ GameObject:
   - component: {fileID: 1018160202}
   - component: {fileID: 1018160201}
   m_Layer: 0
-  m_Name: Test
+  m_Name: Communicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3876,10 +3876,10 @@ RectTransform:
   - {fileID: 772187137}
   - {fileID: 1955003390}
   - {fileID: 204151374}
-  - {fileID: 975730297}
   - {fileID: 1608994935}
   - {fileID: 908940008}
   - {fileID: 808773930}
+  - {fileID: 975730297}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4353,7 +4353,7 @@ RectTransform:
   m_LocalScale: {x: 0.99921316, y: 0.99921316, z: 0.99921316}
   m_Children: []
   m_Father: {fileID: 1507194612}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

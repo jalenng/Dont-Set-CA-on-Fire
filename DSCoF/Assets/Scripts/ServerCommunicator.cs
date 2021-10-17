@@ -7,6 +7,8 @@ using UnityEngine.Networking;
 public class ServerCommunicator : MonoBehaviour
 {
     [SerializeField] string url = "";
+    private readonly object serverLock = new object();
+    private int[] DATA;
 
     // Singleton pattern
     private void Awake()
@@ -23,50 +25,42 @@ public class ServerCommunicator : MonoBehaviour
         }
     }
 
-    // Used for testing 
-    private void Start()
-    {
-        Debug.Log("Testing Get...");
-        int[] ids = {1, 2, 3, 4, 5};
-        StartCoroutine(GetResponse(ids));
-        
-        Debug.Log("Testing Post...");
-        StartCoroutine(PostResponse(1, 'A'));
+    public bool Post(int id, char choice) {
+        lock(serverLock) {
+            var tmp = StartCoroutine(PostResponse(id, choice));
+        }
+        return true;
     }
- 
-    IEnumerator PostResponse(int id, char choice) {
-        // Create post data
-        string bodyJsonString = string.Format(
-            "{{\"id\": \"{0}\", \"choice\", \"{1}\"}}", 
-            id.ToString(), 
-            choice.ToString().ToUpper());
+
+    public int[] Get(int[] ids) {
+        lock(serverLock) {
+            StartCoroutine(GetResponse(ids));
+        }
+        return DATA;
+    }
+
+    public IEnumerator PostResponse(int id, char choice) {
 
         // Create and send request
-        UnityWebRequest request = new UnityWebRequest(url, "POST");
-
-        byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
-        request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+        UnityWebRequest request = new UnityWebRequest(url+string.Format("?id={0}&choice={1}", id.ToString(), choice.ToString().ToUpper()), "POST");
         request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
-
         request.SetRequestHeader("Content-Type", "application/json");
-
         yield return request.SendWebRequest();
  
         // Check for error
         if (request.result != UnityWebRequest.Result.Success) {
             Debug.Log(request.error);
-        }
-        else {
+        } else {
             // Show results as text
             Debug.Log(request.downloadHandler.text);
         }
     }
 
-    IEnumerator GetResponse(int[] ids) {
+    public IEnumerator GetResponse(int[] ids) {
         // Create and send request
         string joinedIds = string.Join(",", ids);
         string query = string.Format("?id={0}", joinedIds);
-        UnityWebRequest request = new UnityWebRequest(url + query, "POST");
+        UnityWebRequest request = UnityWebRequest.Get(url + query);
         yield return request.SendWebRequest();
  
         // Check for error
@@ -76,6 +70,14 @@ public class ServerCommunicator : MonoBehaviour
         else {
             // Show results as text
             Debug.Log(request.downloadHandler.text);
+            string res = request.downloadHandler.text;
+            var id = res.Split('"')[1];
+            int[] choice = new int[]{0,0,0,0};
+            var d = res.Split('[')[1].Split(']')[0].Split(',');
+            for (int i = 0; i < d.Length; i++) {
+                choice[i] = int.Parse(d[i]);
+            }
+            DATA = choice;
         }
     }
 }
