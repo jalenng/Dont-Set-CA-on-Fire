@@ -34,19 +34,19 @@ public class GuyController : MonoBehaviour
     void Update()
     {
         QR.UpdateQuestion();
-        // if (!intro) {
-        //     QR.Disable();
-        //     Intro();
-        //     return;
-        // } else if (state == 1) {
-        //     QR.Disable();
-        //     Correct();
-        // } else if (state == 2) {
-        //     QR.Disable();
-        //     Wrong();
-        // } else {
-        //     return;
-        // }
+        if (!intro) {
+            QR.Disable();
+            Intro();
+            return;
+        } else if (state == 1) {
+            QR.Disable();
+            Correct();
+        } else if (state == 2) {
+            QR.Disable();
+            Wrong();
+        } else {
+            return;
+        }
     }
 
     void Intro()
