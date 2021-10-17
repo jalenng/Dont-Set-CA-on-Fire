@@ -76,6 +76,7 @@ public class StatsManager : MonoBehaviour
 
     List<int> GetStats(int QN)
     {
+        // TODO
         return new List<int>{0,0,0,1};
         // return new List<int>{Random.Range(0,10),Random.Range(0,10),Random.Range(0,10),Random.Range(0,10)};
     }

@@ -3078,6 +3078,7 @@ GameObject:
   - component: {fileID: 1585682035}
   - component: {fileID: 1585682036}
   - component: {fileID: 1585682037}
+  - component: {fileID: 1585682038}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3197,6 +3198,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homeButton: {fileID: 1608994932}
+--- !u!114 &1585682038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585682031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902e5046b8da99f43a6b942c999b17fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guy: {fileID: 975730300}
 --- !u!1 &1608994931
 GameObject:
   m_ObjectHideFlags: 0

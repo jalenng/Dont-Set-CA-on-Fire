@@ -23,7 +23,6 @@ public class QuestionRunner : MonoBehaviour
         buttons[1].onClick.AddListener(delegate { OptionClicked(1); });
         buttons[2].onClick.AddListener(delegate { OptionClicked(2); });
         buttons[3].onClick.AddListener(delegate { OptionClicked(3); });
-        UpdateQuestion();
     }
 
     void OptionClicked(int index)
@@ -32,11 +31,12 @@ public class QuestionRunner : MonoBehaviour
         currentNum += 1;
         if (currentNum > numberOfQuestions) {
             SceneManager.LoadScene("Result");
+            return;
         }
-        UpdateQuestion();
+        
     }
 
-    void UpdateQuestion()
+    public void UpdateQuestion()
     {
         Question Q = QM.questions[currentNum-1];
         questionNo.text = "Question "+currentNum.ToString();
