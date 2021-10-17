@@ -10,10 +10,10 @@ class Connection():
     #sets up the connection to the azure sql database
     def sqlConnect(self):
         driver = '{ODBC Driver 17 for SQL Server}'
-        server = '555hackathon-server.database.windows.net,1433'
-        database = '555hackathon'
-        username = 'hackathon555-admin'
-        password = '-Moomaster66'
+        server = 'insert server name here'
+        database = 'insert data base'
+        username = 'insert username here'
+        password = 'insert password here'
 
         connection_string = textwrap.dedent('''
             Driver={driver};
