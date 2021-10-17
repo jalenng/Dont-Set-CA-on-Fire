@@ -1,25 +1,27 @@
+## Context
+This repository contains all the source code and assets for our SCEhacks 2021 "Code for California" hackathon project.
+
 ## Inspiration
-- Wanted to make a game
-- Goals:
-    - to create something anyone can understand and play/use 
-    - to educate and bring awareness to topics
-    - to encourage social/behavior change
+We prospected to create something that was interactive and universally understandable. We wanted to strive for educating and bringing awareness to topics and encourage social and behavioral changes in the process, and we decided that a game was the way to go.
 
 ## What it does
-- Quizzes and teaches players abt wildfire trivia
+Our game educates players by quizzing them on wildfire trivia.
 
 ## How we built it
-- Aseprite: art
-- Unity: game engine for game, built for webgl
-- Flask: backend server, serves as API endpoint for unity and interfaces w/ azure sql
-- Azure SQL: store info about player choices to provide stats to player at end of game
+We used Microsoft Whiteboard, Unity, Azure SQL, Flask, and art software to design and implement our project.
+
+We used Microsoft Whiteboard to ideate, collaborate, and design our project.
+We used Unity as the game engine that powers our game, and C# to program our game scripts.
+We used Azure SQL to store statistics of player choices, which the game retrieves and displayes to the player at the end of the game. 
+We used Python and Flask to set up a backend server that interfaces with Azure SQL and provides an API endpoint for our Unity game.
+We used Aseprite and Adobe Photoshop to create our game sprites.
 
 ## Challenges we ran into
-- Getting Unity to communicate with our Flask server
+- Getting Unity tocommunicate with our Flask server
 - Using Azure SQL for the 1st time and having to learn
 
 ## Accomplishments that we're proud of
-- 
+This was our first hackathon, and we're proud that we took the initiative to join. Also, we are proud of the playable and testable prototype we had achieved in just two days of work.
 
 ## What we learned
 - Communication and teamwork
@@ -27,7 +29,7 @@
 - Using Azure's cloud computing offerings
 
 ## What's next for "Don't Set California on Fire!"
-- Expand game to include other types of questions (e.g. keyboard input, slider, multiple selection)
-- Expand topics covered
-- Build game to other platforms (e.g. ios and android) to reach larger audience
-- Increase quality of art to enhance player experience
+We can easily expand our game to feature other topics relevant to California. We can also add different types of questions and answers such as image-based, text input, sliders, and multiple selection answers. 
+
+By building our game for other platforms like iOS and Android, we can reach more people.
+We can also increase quality of art to enhance the player experience
