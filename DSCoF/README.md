@@ -17,16 +17,13 @@ We used Microsoft Whiteboard, Unity, Azure SQL, Flask, and art software to desig
 * Aseprite and Adobe Photoshop were used to create game sprites.
 
 ## Challenges we ran into
-- Getting Unity to communicate with our Flask server
-- Using Azure SQL for the 1st time and having to learn
+The first challenge we had was working with Azure SQL. It was the first time any of us had used it on top of having a lack of experience with cloud computing/servers. The main difficulty was figuring out how to connect the Flask backend with the SQL server. It involved server configuration and special Python libraries for connecting to servers. Once connected, none of us knew how to use SQL queries to get and change the data. Furthermore, communicating between Unity and the Flask server was difficult as the http requests are much more complicated than JavaScript's fetch function that we were use to. Issues kept arising with Unity throwing errors when we were working with JSON data. Lastly, we overestimated the game design complexity for a gamified survey. The art and game logic took up much more time than was expected, and there were many bugs that needed to be worked out with game mechanics.
 
 ## Accomplishments that we're proud of
 Given that this hackathon was our first, we are proud to have participated. Furthermore, we are proud of the playable and testable prototype we have achieved in our two days of work.
 
 ## What we learned
-- Communication and teamwork
-- Ideation and rapid prototyping techniques
-- Using Azure's cloud computing offerings
+As this was our first hackathon, we learned a lot about project design and rapid prototyping. Also with the limited time, we learned how to clearly communicate our successes and struggles with one another. We learned the basics of what Azure has to offer, and specifically how its databases work. Also, we learned a lot more about how to use Unity, and server communication within Unity.
 
 ## What's next for "Don't Set California on Fire!"
 We can expand our game to feature other topics relevant to California. We can also implement various question and answer types--ranking, matching, and text input, to name a few. 
