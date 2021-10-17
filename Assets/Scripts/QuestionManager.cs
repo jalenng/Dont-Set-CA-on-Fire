@@ -36,7 +36,7 @@ public class QuestionManager : MonoBehaviour
                 Question Q = new Question();
                 var tmp = lines[i];
                 int j = 0;
-                Q.questionNumber = int.Parse(tmp[j++]);
+                Q.QID = int.Parse(tmp[j++]);
                 Q.questionText = tmp[j++];
                 Q.options = new string[4];
                 for (int k = 0; k < 4; k++) {

@@ -15,7 +15,6 @@ public class CSVReader
             var line = lines[i];
             if (line == "") break;
             List<string> texts = new List<string>();
-            texts.Add(i.ToString());
             var tmp = line.Split(',');
             for (int j = 0; j < tmp.Length; j++) {
                 texts.Add(tmp[j]);
