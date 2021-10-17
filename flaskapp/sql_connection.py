@@ -7,6 +7,7 @@ class Connection():
         self.cnxn = None
         self.crsr = None
 
+    #sets up the connection to the azure sql database
     def sqlConnect(self):
         driver = '{ODBC Driver 17 for SQL Server}'
         server = '555hackathon-server.database.windows.net,1433'
@@ -36,6 +37,7 @@ class Connection():
         crsr: pyodbc.Cursor = cnxn.cursor()
         self.crsr = crsr
 
+    #updates the database row with the given id and increments the option chosen
     def updateResults(self, choice, id):
         choices = {
             'A': 'ResultsA',
@@ -61,6 +63,7 @@ class Connection():
 
         return "Done", 201
 
+    #returns how many times the question choices have been selected for a list of ids
     def getResults(self, ids):
         ids = tuple(ids)
         select_sql = '''
