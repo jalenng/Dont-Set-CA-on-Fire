@@ -25,8 +25,8 @@ public class ServerCommunicator : MonoBehaviour
     IEnumerator PostResponse(int id, char choice) {
         // Create post data
         WWWForm data = new WWWForm();
-        form.AddField("id", id.ToString());
-        form.AddField("choice", choice.ToString().ToUpper());
+        data.AddField("id", id.ToString());
+        data.AddField("choice", choice.ToString().ToUpper());
 
         // Create and send request
         UnityWebRequest request = UnityWebRequest.Post(url, data);
