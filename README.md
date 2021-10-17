@@ -1,3 +1,5 @@
+# Don't Set California on Fire!
+
 ## Context
 This repository contains all the source code and assets for our SCEhacks 2021 "Code for California" hackathon project.
 
