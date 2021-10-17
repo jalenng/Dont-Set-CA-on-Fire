@@ -11,6 +11,7 @@ public class StatsManager : MonoBehaviour
     public TMP_Text[] options;
     public GameObject[] bars;
     public TMP_Text[] percent;
+    public Image[] arrows;
     public int maxWidth;
     public Button nextQuestion;
     public Button prevQuestion;
@@ -68,8 +69,12 @@ public class StatsManager : MonoBehaviour
             rt.transform.Translate(-(rt.sizeDelta.x / 2.0f - 5),0,0);
             rt.sizeDelta = new Vector2(width, rt.sizeDelta.y);
             rt.transform.Translate(width / 2.0f - 5,0,0);
+            arrows[i].gameObject.SetActive(false);
             if (char.ConvertToUtf32(tmp.answer, 0) - char.ConvertToUtf32("A", 0) == i) {
                 img.color = Color.green;
+            }
+            if (char.ConvertToUtf32(tmp.userAnswer, 0) - char.ConvertToUtf32("A", 0) == i) {
+                arrows[i].gameObject.SetActive(true);
             }
         }
     }

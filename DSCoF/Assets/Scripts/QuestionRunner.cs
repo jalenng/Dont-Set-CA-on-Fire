@@ -12,10 +12,12 @@ public class QuestionRunner : MonoBehaviour
     public TMP_Text questionNo;
     public TMP_Text[] options;
     private QuestionManager QM;
+    private GuyController GC;
     private int numberOfQuestions;
     private int currentNum;
     void Start()
     {
+        GC = GameObject.FindObjectOfType<GuyController>().GetComponent<GuyController>();
         QM = GameObject.FindObjectOfType<QuestionManager>().GetComponent<QuestionManager>();
         numberOfQuestions = QM.questions.Count;
         currentNum = 1;
@@ -33,7 +35,7 @@ public class QuestionRunner : MonoBehaviour
             SceneManager.LoadScene("Result");
             return;
         }
-        
+        GC.HandleAnswer(currentNum-2);
     }
 
     public void UpdateQuestion()
@@ -43,6 +45,22 @@ public class QuestionRunner : MonoBehaviour
         question.text = Q.questionText;
         for (int i = 0; i < 4; i++) {
             options[i].text = Q.options[i];
+        }
+    }
+
+    public void Disable()
+    {
+        question.text = "";
+        questionNo.text = "";
+        for (int i = 0; i < buttons.Length; i++) {
+            buttons[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void Enable()
+    {
+        for (int i = 0; i < buttons.Length; i++) {
+            buttons[i].gameObject.SetActive(true);
         }
     }
 }

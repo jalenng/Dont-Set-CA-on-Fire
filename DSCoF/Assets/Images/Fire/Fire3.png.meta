@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 3e7fb009415982242a9f4ddd126fa764
+guid: cc877a2795af09e49bd43f21f2519766
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2085297131118140966
-    second: Fire1_0
+      213: 1467658710680967802
+    second: Fire3_0
   - first:
-      213: 2469033851445598716
-    second: Fire1_1
+      213: -1494754285775050303
+    second: Fire3_1
   - first:
-      213: 3242852554281066579
-    second: Fire1_2
+      213: -3316138215429592248
+    second: Fire3_2
   - first:
-      213: -3312327535390791081
-    second: Fire1_3
+      213: 8675152223112687621
+    second: Fire3_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire1_0
+      name: Fire3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1ef80ce498f03e0800000000000000
-      internalID: -2085297131118140966
+      spriteID: a7a95a542db2e5410800000000000000
+      internalID: 1467658710680967802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fire1_1
+      name: Fire3_1
       rect:
         serializedVersion: 2
         x: 16
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf954d5d435c34220800000000000000
-      internalID: 2469033851445598716
+      spriteID: 1c9a2e985e0914be0800000000000000
+      internalID: -1494754285775050303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fire1_2
+      name: Fire3_2
       rect:
         serializedVersion: 2
         x: 32
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35024ec773de00d20800000000000000
-      internalID: 3242852554281066579
+      spriteID: 84ba83bdcd5baf1d0800000000000000
+      internalID: -3316138215429592248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fire1_3
+      name: Fire3_3
       rect:
         serializedVersion: 2
         x: 48
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75a6941f7af3802d0800000000000000
-      internalID: -3312327535390791081
+      spriteID: 5007217ebf4546870800000000000000
+      internalID: 8675152223112687621
       vertices: []
       indices: 
       edges: []
